@@ -22,7 +22,9 @@
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////
 NSLocale* TTCurrentLocale() {
-    return [[[NSLocale alloc] initWithLocaleIdentifier:@"zh_TW"] autorelease];
+    NSBundle *b = [NSBundle mainBundle];
+    NSArray *l = [b preferredLocalizations];
+    return [[[NSLocale alloc] initWithLocaleIdentifier:[l objectAtIndex:0]] autorelease];
 }
 
 
